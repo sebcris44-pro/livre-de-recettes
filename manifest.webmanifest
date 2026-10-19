@@ -1,0 +1,17 @@
+{
+  "name": "Livre de recettes",
+  "short_name": "Recettes",
+  "description": "Le livre de recettes de la famille, à consulter partout, même hors connexion.",
+  "lang": "fr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#fdf0e1",
+  "theme_color": "#e8592b",
+  "icons": [
+    { "src": "icone-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icone-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icone-512-masquable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
