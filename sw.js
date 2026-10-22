@@ -2,7 +2,7 @@
    - l'application : en cache, renouvelée quand sa version change (remplacée à la publication) ;
    - livre.json et recettes.bin : réseau d'abord, sinon la dernière version enregistrée ;
    - photos : leur nom est l'empreinte du contenu, elles ne changent jamais -> cache d'abord. */
-const VERSION = "d696b9836488";
+const VERSION = "e32244f78eba";
 const APP = "app-" + VERSION, DONNEES = "donnees", PHOTOS = "photos";
 const FICHIERS = ["./", "index.html", "app.css", "app.js", "manifest.webmanifest", "icone-192.png", "icone-512.png", "icone-180.png"];
 

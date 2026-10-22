@@ -178,13 +178,25 @@ function ecranConnexion(message = "") {
       <h1>Livre de recettes</h1>
       <p>Entrez le mot de passe du livre pour l'ouvrir.</p>
       <form id="form-connexion" autocomplete="on">
-        <input class="champ" id="mdp" type="password" autocomplete="current-password" placeholder="Mot de passe" required>
+        <div class="champ-mdp">
+          <input class="champ" id="mdp" type="password" autocomplete="current-password" placeholder="Mot de passe"
+                 autocapitalize="off" autocorrect="off" spellcheck="false" required>
+          <button type="button" class="voir-mdp" id="voir-mdp" aria-label="Afficher le mot de passe" title="Afficher le mot de passe">👁️</button>
+        </div>
         <label class="case"><input type="checkbox" id="garder" checked> Rester connecté sur cet appareil</label>
         <button class="btn plein" type="submit">Ouvrir le livre</button>
         <div class="erreur" id="erreur">${esc(message)}</div>
       </form>
     </div>`;
   const form = document.getElementById("form-connexion");
+  document.getElementById("voir-mdp").addEventListener("click", (ev) => {
+    const champ = document.getElementById("mdp"), visible = champ.type === "password";
+    champ.type = visible ? "text" : "password";
+    ev.currentTarget.textContent = visible ? "🙈" : "👁️";
+    ev.currentTarget.setAttribute("aria-label", visible ? "Masquer le mot de passe" : "Afficher le mot de passe");
+    ev.currentTarget.title = ev.currentTarget.getAttribute("aria-label");
+    champ.focus();
+  });
   form.addEventListener("submit", async (ev) => {
     ev.preventDefault();
     const bouton = form.querySelector("button"), erreur = document.getElementById("erreur");

@@ -57,6 +57,12 @@ a { color: var(--accent); }
   background: var(--surface); outline: none;
 }
 .champ:focus { border-color: var(--accent); }
+.champ-mdp { position: relative; }
+.champ-mdp .champ { padding-right: 52px; }
+.voir-mdp {
+  position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px; border: 0; background: none; font-size: 1.25em; cursor: pointer;
+}
 .case { display: flex; align-items: center; gap: 8px; justify-content: center; color: var(--texte-doux); font-size: .92em; }
 .erreur { color: #c62828; min-height: 1.4em; font-size: .95em; }
 
